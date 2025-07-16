@@ -349,12 +349,12 @@ footer:
      - title: 博客
        items:
          - '[近期发布](/)'
-         - '[分类](/blog/categories/)'
-         - '[标签](/blog/tags/)'
-         - '[归档](/blog/archives/)'
-    # - title: 项目
-    #   items:
-    #     - '[xxx](/)'
+         - '[分类](/categories/)'
+         - '[标签](/tags/)'
+         - '[归档](/archives/)'
+     - title: 项目
+       items:
+         - '[知识库](/wiki/tags/知识库/)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
