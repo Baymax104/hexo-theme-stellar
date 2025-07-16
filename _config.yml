@@ -49,11 +49,11 @@ menubar:
       icon: solar:documents-bold-duotone
       title: 博客
       url: /
-    # - id: wiki
-    #   theme: '#3DC550'
-    #   icon: solar:notebook-bookmark-bold-duotone
-    #   title: 文档
-    #   url: /wiki/
+    - id: wiki
+      theme: '#3DC550'
+      icon: solar:notebook-bookmark-bold-duotone
+      title: 文档
+      url: /wiki/
     # - id: explore
     #   theme: '#FA6400'
     #   icon: solar:planet-bold-duotone
@@ -189,11 +189,7 @@ article:
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
   auto_excerpt: 128
   # 分类颜色
-  category_color:
-    Android: "#3DDC84"
-    Rust: "#DEA584"
-    Kotlin: "#9C27B0"
-    Vue3: "#4fc08d"
+  category_color: {}
   # 文章许可协议
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
@@ -343,19 +339,19 @@ footer:
       icon: '<i class="fa-solid fa-rss"></i>'
       url: /atom.xml
     theme:
-      icon: default:theme
+      icon: '<i class="fa-solid fa-moon"></i>'
       onclick: 'switchTheme()'
 
     # comments:
     #   icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/>'
     #   url: /about/#comments
   sitemap:
-    # - title: 博客
-    #   items:
-    #     - '[近期发布](/)'
-    #     - '[分类](/blog/categories/)'
-    #     - '[标签](/blog/tags/)'
-    #     - '[归档](/blog/archives/)'
+     - title: 博客
+       items:
+         - '[近期发布](/)'
+         - '[分类](/blog/categories/)'
+         - '[标签](/blog/tags/)'
+         - '[归档](/blog/archives/)'
     # - title: 项目
     #   items:
     #     - '[xxx](/)'
