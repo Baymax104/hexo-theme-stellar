@@ -46,12 +46,12 @@ menubar:
     # url: 点击跳转到哪，支持相对路径和绝对路径
     - id: post
       theme: '#1BCDFC'
-      icon: solar:documents-bold-duotone
+#      icon: solar:documents-bold-duotone
       title: 博客
       url: /
     - id: wiki
       theme: '#3DC550'
-      icon: solar:notebook-bookmark-bold-duotone
+#      icon: solar:notebook-bookmark-bold-duotone
       title: 文档
       url: /wiki/
     # - id: explore
@@ -357,7 +357,7 @@ footer:
      - title: 项目
        items:
          - '[知识库](/wiki/tags/知识库/)'
-    #     - '[xxx](/)'
+         - '[开源项目](/wiki/tags/开源项目)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
     # - title: 社交
