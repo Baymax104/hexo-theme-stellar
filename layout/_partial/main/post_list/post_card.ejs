@@ -97,13 +97,11 @@ function div_default() {
   }
   el += '</div>';
   // tags
-  el += '<div style="margin: 4px 0px;">';
   if (post.tags && post.tags.length > 0) {
-    el += '<span class="cap tags">';
-    el += post.tags.map(tag => `<span style="background-color: var(--tag-bg-color); padding: 0px 6px; margin: 0px 5px 0px 0px;border-radius: 5px; color: var(--tag-text-color); line-height: 1.5;">#<span>${tag.name}</span></span>`).join('');
+    el += '<span class="meta tags">';
+    el += post.tags.map(tag => `<span class="tag breadcrumb" ${category_color(tag.name)}>#${tag.name}</span>`).join("");
     el += '</span>';
   }
-  el += '</div>';
   el += '</article>';
   return el;
 }

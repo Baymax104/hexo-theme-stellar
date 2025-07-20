@@ -75,6 +75,23 @@
       svg
         color: $c-red
 
+  span.meta.tags
+    display: block
+    line-height: 1
+    margin: 0.5rem 0
+
+    .tag
+      --theme-block: var(--block)
+      background: var(--theme-block)
+      padding: 2px 4px
+      border-radius: 5px
+
+      &, span
+        font-size: $fs-13
+
+    .tag + .tag
+      margin-left: 4px
+
 
 // common article
 .post-list .md-text
@@ -203,7 +220,7 @@
     --theme-block: var(--block)
     background: var(--theme-block)
     padding: 2px 4px
-    border-radius: 2px
+    border-radius: 5px
   p:last-child
     margin-bottom: 0
   .cap+.cap

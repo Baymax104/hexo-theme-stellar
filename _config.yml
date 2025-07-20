@@ -188,12 +188,14 @@ article:
   auto_banner: false # search from https://source.unsplash.com/
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
   auto_excerpt: 128
-  # 分类颜色
-  category_color: {}
+  # 分类或标签颜色
+  category_color:
+    "知识库": "#009ee1"
+    "开源项目": "#28c63b"
   # 文章许可协议
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
-  share: [ wechat, email, link ]
+  share: [wechat, email, link]
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:
@@ -202,7 +204,7 @@ article:
     max_count: 5
 
 search:
-  service: local_search # local_search, algolia_search, todo...
+  service: local_search # local_search, algolia_search
   local_search: # 在 front-matter 中设置 indexing:false 来避免被搜索索引
     field: all # post, page, all
     path: /search.json # 搜索文件存放位置
