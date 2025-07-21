@@ -17,6 +17,25 @@
     border-radius: $border-bar
     color: var(--text-p1)
 
+.related-wrap#related-posts
+  border: 1px solid var(--block-border)
+  border-radius: 24px
+  padding: 1rem
+  background-color: var(--block)
+  .cap.theme
+    width: 100%
+    text-align: center
+    color: black
+    font-size: $fs-14
+    &::after
+      content: ""
+      display: block
+      height: 1px
+      width: 100%
+      background-color: var(--block-border)
+      margin-top: 4px
+
+
 article.md-text.content+.related-wrap
   margin-top: 0
 
@@ -62,8 +81,8 @@ article.md-text.content+.related-wrap
     grid-gap: 16px
     grid-template-columns: repeat(auto-fill, "calc((100% - 1 * %s) / 2)" % 16px)
     .item  
-      border-top: 1px dashed var(--block-border)
-      border-bottom: 1px dashed var(--block-border)
+      border-top: 1px solid var(--block-border)
+      border-bottom: 1px solid var(--block-border)
       padding: 1rem 0
     .note
       margin-bottom: 0.75rem
@@ -92,10 +111,21 @@ article.md-text.content+.related-wrap
   .cmt-title
     p
       margin: 0
-      font-size: inherit
+      font-size: $fs-14
+      display: inline-block
+      width: 100%
+      text-align: center
+      color: black
       a
         --link: var(--theme)
         --link-a20: x-theme-alpha(0.2)
+      &::after
+        content: ""
+        display: block
+        height: 1px
+        width: 100%
+        background-color: var(--block-border)
+        margin-top: 4px
   .cmt-body
     min-height: 150px
     position: relative
