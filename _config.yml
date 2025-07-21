@@ -190,7 +190,7 @@ article:
   auto_excerpt: 128
   # 分类或标签颜色
   category_color:
-    "知识库": "#009ee1"
+    "学习笔记": "#009ee1"
     "开源项目": "#28c63b"
   # 文章许可协议
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
@@ -352,11 +352,9 @@ footer:
        items:
          - '[近期发布](/)'
          - '[分类](/categories/)'
-         - '[标签](/tags/)'
-         - '[归档](/archives/)'
-     - title: 项目
+     - title: 文档
        items:
-         - '[知识库](/wiki/tags/知识库/)'
+         - '[学习笔记](/wiki/tags/学习笔记/)'
          - '[开源项目](/wiki/tags/开源项目)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
