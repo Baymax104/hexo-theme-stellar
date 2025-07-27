@@ -192,6 +192,8 @@ article:
   category_color:
     "学习笔记": "#009ee1"
     "开源项目": "#28c63b"
+    "编程语言": "#d6601a"
+    "框架学习": "#845ef7"
   # 文章许可协议
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
@@ -352,10 +354,14 @@ footer:
        items:
          - '[近期发布](/)'
          - '[分类](/categories/)'
+         - '[标签](/tags)'
+         - '[归档](/archives)'
      - title: 文档
        items:
          - '[学习笔记](/wiki/tags/学习笔记/)'
          - '[开源项目](/wiki/tags/开源项目)'
+         - '[编程语言](/wiki/tags/编程语言)'
+         - '[框架学习](/wiki/tags/框架学习)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
     # - title: 社交
