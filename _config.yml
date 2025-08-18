@@ -73,13 +73,13 @@ site_tree:
   # 主页配置
   home:
     leftbar: recent
-    rightbar: ghuser, statistics
+    rightbar: ghuser, welcome
   # 博客列表页配置
   index_blog:
     base_dir: blog # 只影响自动生成的页面路径
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
     leftbar: recent # for categories/tags/archives
-    rightbar: ghuser, statistics
+    rightbar: ghuser, welcome
     nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
       # '朋友文章': /friends/rss/
   # 博客专栏列表页配置
@@ -91,7 +91,7 @@ site_tree:
     base_dir: wiki # 只影响自动生成的页面路径
     menu_id: wiki # 未在 front-matter 中指定 menu_id 时，layout 为 wiki 的页面默认使用这里配置的 menu_id
     leftbar: related, recent # for wiki
-    rightbar: 
+    rightbar: ghuser, welcome
     nav_tabs:
       # 'more': https://github.com/xaoxuu
   # -- 内容类页面 -- #
@@ -187,7 +187,7 @@ article:
   # 如果没有指定横幅，是否根据 tags 作为关键词搜索横幅图片？
   auto_banner: false # search from https://source.unsplash.com/
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
-  auto_excerpt: 128
+  auto_excerpt: 100
   # 分类或标签颜色
   category_color:
     "学习笔记": "#009ee1"
@@ -356,7 +356,7 @@ footer:
          - '[分类](/categories/)'
          - '[标签](/tags/)'
          - '[归档](/archives/)'
-     - title: 文档
+     - title: 知识库
        items:
          - '[学习笔记](/wiki/tags/学习笔记/)'
          - '[开源项目](/wiki/tags/开源项目/)'
