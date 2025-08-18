@@ -37,7 +37,7 @@ logo:
 
 # 侧边栏主功能导航菜单
 menubar:
-  columns: 4 # 一行多少个
+  columns: 3 # 一行多少个
   items: # 可按照自己需求增加，符合以下格式即可
     # id: 页面中高亮的 menu_id 
     # theme: 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
@@ -45,25 +45,25 @@ menubar:
     # title: 标题
     # url: 点击跳转到哪，支持相对路径和绝对路径
     - id: post
-      theme: '#1BCDFC'
-#      icon: solar:documents-bold-duotone
+      theme: '#74c0fc'
+      icon: menu:post
       title: 博客
       url: /
     - id: wiki
-      theme: '#3DC550'
-#      icon: solar:notebook-bookmark-bold-duotone
-      title: 文档
+      theme: '#69db7c'
+      icon: menu:wiki
+      title: 知识库
       url: /wiki/
     # - id: explore
     #   theme: '#FA6400'
     #   icon: solar:planet-bold-duotone
     #   title: 探索
     #   url: /explore/
-    # - id: social
-    #   theme: '#F44336'
-    #   icon: solar:chat-square-like-bold-duotone
-    #   title: 社交
-    #   url: /friends/
+    - id: about
+      theme: '#F44336'
+      icon: menu:about
+      title: 关于
+      url: /about/
 
 
 ######## Main ########
@@ -195,7 +195,7 @@ article:
     "编程语言": "#d6601a"
     "框架学习": "#845ef7"
   # 文章许可协议
-  license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
+  license: '本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
   share: [wechat, email, link]
   # 相关文章，需要安装插件 (for layout: post)
@@ -354,14 +354,14 @@ footer:
        items:
          - '[近期发布](/)'
          - '[分类](/categories/)'
-         - '[标签](/tags)'
-         - '[归档](/archives)'
+         - '[标签](/tags/)'
+         - '[归档](/archives/)'
      - title: 文档
        items:
          - '[学习笔记](/wiki/tags/学习笔记/)'
-         - '[开源项目](/wiki/tags/开源项目)'
-         - '[编程语言](/wiki/tags/编程语言)'
-         - '[框架学习](/wiki/tags/框架学习)'
+         - '[开源项目](/wiki/tags/开源项目/)'
+         - '[编程语言](/wiki/tags/编程语言/)'
+         - '[框架学习](/wiki/tags/框架学习/)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
     # - title: 社交
