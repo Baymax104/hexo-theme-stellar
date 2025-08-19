@@ -20,6 +20,7 @@ canonical:
   officialHosts: # 官方主机列表，每行一个，例如 xaoxuu.vercel.app
     - localhost
     - baymaxam.top
+    - baymax104-github-io.vercel.app
 
 open_graph:
   enable: true
