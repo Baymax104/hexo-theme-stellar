@@ -21,6 +21,8 @@ canonical:
     - localhost
     - baymaxam.top
     - baymax-blog.vercel.app
+    - baymax-blog-baymax104s-projects.vercel.app
+    - baymax-blog-git-main-baymax104s-projects.vercel.app
 
 open_graph:
   enable: true
