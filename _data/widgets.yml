@@ -20,9 +20,9 @@ welcome:
     <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <!--添加一个访问量-->
     <center>
-    <span style="display: inline-block;margin: 3px 0;">📈总访问 <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span> 次📈</span>
-    <span style="display: inline-block;margin: 3px 0;">📑本页访问 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次📑</span>
-    <span id="runtime_span" style="display: inline-block;margin: 3px 0;"></span>
+    <span style="display: block;margin: 3px 0;">📈总访问 <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span> 次📈</span>
+    <span style="display: block;margin: 3px 0;">📑本页访问 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次📑</span>
+    <span id="runtime_span" style="display: block;margin: 3px 0;"></span>
 
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
