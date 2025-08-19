@@ -20,7 +20,6 @@ canonical:
   officialHosts: # 官方主机列表，每行一个，例如 xaoxuu.vercel.app
     - localhost
     - baymaxam.top
-    - baymax104-github-io.vercel.app
 
 open_graph:
   enable: true
@@ -252,7 +251,7 @@ comments:
   # https://giscus.app/zh-CN
   giscus:
     src: https://giscus.app/client.js
-    data-repo: baymax104/baymax104.github.io # [在此输入仓库]
+    data-repo: baymax104/baymax-blog # [在此输入仓库]
     data-repo-id: R_kgDOLd0LpQ
     data-category: Announcements
     data-category-id: DIC_kwDOLd0Lpc4CeBz-
@@ -461,10 +460,6 @@ tag_plugins:
   chat:
     api: https://siteinfo.listentothewind.cn/api/v1
 
-inject:
-  head:
-    - <meta name="google-site-verification" content="TGMxMQ337dKI-wX4cXqgjK7Ph-4ly5GYpjvCstU0dO8" />
-  script:
 
 # 基础依赖
 dependencies:
