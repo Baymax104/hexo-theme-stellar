@@ -461,6 +461,10 @@ tag_plugins:
   chat:
     api: https://siteinfo.listentothewind.cn/api/v1
 
+inject:
+  head:
+    - <meta name="google-site-verification" content="TGMxMQ337dKI-wX4cXqgjK7Ph-4ly5GYpjvCstU0dO8" />
+  script:
 
 # 基础依赖
 dependencies:
