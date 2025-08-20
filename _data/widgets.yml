@@ -15,10 +15,10 @@ info-card:
     <script src="//api.busuanzi.cc/static/3.6.9/busuanzi.min.js" defer></script>
     <div style="text-align: center;">
     <span style="display: block;margin: 5px 0 3px;">
-    📈总访问 <span id="busuanzi_value_site_pv" style="font-weight: bold;">0</span> 次📈
+    📈总访问 <span id="busuanzi_site_pv" style="font-weight: bold;">0</span> 次📈
     </span>
     <span style="display: block;margin: 3px 0;">
-    📊总访客 <span id="busuanzi_site_pv" style="font-weight: bold;">0</span> 人📊
+    📊总访客 <span id="busuanzi_site_uv" style="font-weight: bold;">0</span> 人📊
     </span>
     <span id="runtime_span" style="display: block;margin: 3px 0;"></span>
 
