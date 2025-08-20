@@ -2,61 +2,49 @@
 # layout即组件布局，支持自定义的有：
 # - markdown: 渲染 md 文本
 
-statistics:
-  layout: markdown
-  title: 网站统计
-  content: |
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
-
 welcome:
   layout: markdown
   title: 🎉欢迎🎉
   content: |
-    Hello. I am Baymax, your personal healthcare companion. ●—●
-    <hr style="border: 1px solid black; background-color: black;">
-    <!--不蒜子计数器-->
-    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <!--添加一个访问量-->
-    <center>
-    <span style="display: block;margin: 3px 0;">📈总访问 <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span> 次📈</span>
-    <span style="display: block;margin: 3px 0;">📑本页访问 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次📑</span>
+    <div style="margin-bottom: 5px;">Hi，欢迎来到我的博客👋</div>
+    <img src="https://api.szfx.top/info-card/" fancybox="true">
+
+info-card:
+  layout: markdown
+  content: |
+    <script src="//api.busuanzi.cc/static/3.6.9/busuanzi.min.js" defer></script>
+    <div style="text-align: center;">
+    <span style="display: block;margin: 5px 0 3px;">
+    📈总访问 <span id="busuanzi_value_site_pv" style="font-weight: bold;">0</span> 次📈
+    </span>
+    <span style="display: block;margin: 3px 0;">
+    📊总访客 <span id="busuanzi_site_pv" style="font-weight: bold;">0</span> 人📊
+    </span>
     <span id="runtime_span" style="display: block;margin: 3px 0;"></span>
 
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-      var runtime_span = document.getElementById('runtime_span');
+      const runtime_span = document.getElementById('runtime_span');
     
-      var seconds = 1000;
-      var minutes = seconds * 60;
-      var hours = minutes * 60;
-      var days = hours * 24;
-      var years = days * 365;
+      const days = 24 * 60 * 60 * 1000;
+      const years = days * 365;
     
-      var today = new Date();
-      var todayYear = today.getFullYear();
-      var todayMonth = today.getMonth();
-      var todayDate = today.getDate();
-      var todayHour = today.getHours();
-      var todayMinute = today.getMinutes();
-      var todaySecond = today.getSeconds();
+      const t1 = new Date(2025, 7, 12, 0, 0, 0);
+      const t2 = new Date();
+      const diff = t2 - t1;
     
-      var t1 = Date.UTC(2025, 7, 12, 0, 0, 0); // UTC时间，月份从0开始
-      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-      var diff = t2 - t1;
+      const diffYears = Math.floor(diff / years);
+      const diffDays = Math.floor((diff % years) / days);
     
-      var diffYears = Math.floor(diff / years);
-      var diffDays = Math.floor((diff / days) - diffYears * 365);
-    
-      // 更新显示时间的span元素内容
-      runtime_span.innerHTML = "⏰已营业 " + diffYears + " 年 " + diffDays + " 天⏰";
+      runtime_span.innerText = "🕘已营业 " + diffYears + " 年 " + diffDays + " 天🕘";
     });
     </script>
     
-    </center>
+    </div>
     <hr style="border: 1px solid black; background-color: black;">
+    <div style="margin-bottom: 5px;">
     本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。
+    </div>
 
 
 

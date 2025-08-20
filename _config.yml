@@ -73,14 +73,14 @@ site_tree:
   # -- 列表类页面 -- #
   # 主页配置
   home:
-    leftbar: recent
-    rightbar: ghuser, welcome
+    leftbar: welcome, recent
+    rightbar: ghuser, info-card
   # 博客列表页配置
   index_blog:
     base_dir: blog # 只影响自动生成的页面路径
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
     leftbar: recent # for categories/tags/archives
-    rightbar: ghuser, welcome
+    rightbar: ghuser, info-card
     nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
       # '朋友文章': /friends/rss/
   # 博客专栏列表页配置
@@ -92,7 +92,7 @@ site_tree:
     base_dir: wiki # 只影响自动生成的页面路径
     menu_id: wiki # 未在 front-matter 中指定 menu_id 时，layout 为 wiki 的页面默认使用这里配置的 menu_id
     leftbar: related, recent # for wiki
-    rightbar: ghuser, welcome
+    rightbar: ghuser, info-card
     nav_tabs:
       # 'more': https://github.com/xaoxuu
   # -- 内容类页面 -- #
@@ -363,24 +363,23 @@ footer:
          - '[开源项目](/wiki/tags/开源项目/)'
          - '[编程语言](/wiki/tags/编程语言/)'
          - '[框架学习](/wiki/tags/框架学习/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    # - title: 社交
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    # - title: 关于
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-  content: | # 支持 Markdown 格式
+     - title: 社交
+       items:
+         - '[关于我](/about/)'
+         - '[Github](https://github.com/Baymax104)'
+         - '[BiliBili](https://space.bilibili.com/175196416)'
+  content: |
     本站由 [{author.name}](/) 使用 [{theme.name} {theme.version}]({theme.tree}) 主题创建。
     本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
-  # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
+    本博客部分素材来源于网络，如有侵权请评论联系删除
+    <div style="display: flex;justify-content: center;align-items: center;margin: 10px;">
+      <a target="_blank" rel="noopener" href="https://notbyai.fyi/">
+        <img class="lazy entered loaded" src="/assets/image/not-by-ai.svg" data-src="/assets/image/not-by-ai.svg" style="width:140px;height:50px;margin-right:10px;" data-ll-status="loaded">
+      </a>
+      <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+        <img class="lazy entered loaded" src="/assets/image/cc-by-nc-sa.svg" data-src="/assets/image/cc-by-nc-sa.svg" style="width:140px;height:50px;" data-ll-status="loaded">
+      </a>
+    </div>
 
 
 ######## Injection ########
@@ -494,7 +493,6 @@ data_services:
     js: /js/services/siteinfo.js
     # 设置 api 可以自动提取网页标题、图标，服务部署方法：https://github.com/xaoxuu/site-info-api/
     # 接口测试通过后，把按钮的 href 部分替换成 {href} 之后填写到下方，例如：https://api.xaox.cc/site_info/v1?url={href}
-#    api: https://site-info-api-lac.vercel.app/api/v1?url=${href}
     api:
   ghinfo:
     js: /js/services/ghinfo.js
@@ -613,7 +611,7 @@ plugins:
   # 使用 hexo-renderer-markdown-it-plus 作为公式渲染器：npm uninstall hexo-renderer-marked --save npm install hexo-renderer-markdown-it-plus --save
   katex:
     enable: true # hexo-renderer-markdown-it-plus 默认开启 katex，此选项仅用于引入样式
-    inject: <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    inject: <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.16/dist/katex.min.css">
   
   # MathJax
   # 需在Markdown文件开头加入mathjax: true
