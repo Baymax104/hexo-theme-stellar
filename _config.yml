@@ -18,7 +18,8 @@ preconnect:
 canonical:
   originalHost: baymaxam.top # 主站点域名主机，例如 xaoxuu.com
   officialHosts: # 官方主机列表，每行一个，例如 xaoxuu.vercel.app
-#    - localhost
+    - localhost
+    - baymaxam.top
 
 open_graph:
   enable: true
@@ -380,6 +381,18 @@ footer:
     本站由 [{author.name}](/) 使用 [{theme.name} {theme.version}]({theme.tree}) 主题创建。
     本博客所有文章除特别声明外，均采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。
   # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
+
+
+######## Injection ########
+inject:
+  head:
+    - <meta name="google-site-verification" content="TGMxMQ337dKI-wX4cXqgjK7Ph-4ly5GYpjvCstU0dO8" />
+  script:
+    - |
+      <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      </script>
+    - <script defer src="/_vercel/insights/script.js"></script>
 
 
 ######## Tag Plugins ########

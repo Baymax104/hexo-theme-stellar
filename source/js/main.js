@@ -119,7 +119,7 @@ const init = {
         if (topSeg) {
           $("#data-toc a.toc-link").removeClass("active");
           var link = "#" + topSeg.attr("id");
-          if (link != '#undefined') {
+          if (link !== '#undefined') {
             const highlightItem = $('#data-toc a.toc-link[href="' + encodeURI(link) + '"]');
             if (highlightItem.length > 0) {
               highlightItem.addClass("active");
@@ -231,7 +231,8 @@ const init = {
     if (!canonical.originalHost) return;
     const currentURL = new URL(window.location.href);
     const currentHost = currentURL.hostname.replace(/^www\./, '');
-    if (currentHost == 'localhost') return;
+    if (currentHost === 'localhost') return;
+    if (currentHost.endsWith(".vercel.app")) return;
     const encodedCurrentHost = window.btoa(currentHost);
     const isCurrentHostValid = canonical.encoded === encodedCurrentHost;
     const canonicalTag = document.querySelector('link[rel="canonical"]');
