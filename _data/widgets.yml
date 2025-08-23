@@ -47,9 +47,16 @@ info-card:
     </div>
 
 
+memos:
+  layout: timeline
+  title: 近期说说
+  api: https://memos.baymaxam.top/api/v1/memos?limit=10&visibility=public
+  type: memos
+  hide: user
 
 ghrepo:
   layout: ghrepo
+
 related:
   layout: related
 
