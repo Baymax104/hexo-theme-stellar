@@ -7,7 +7,7 @@ welcome:
   title: 🎉欢迎🎉
   content: |
     <div style="margin-bottom: 5px;">Hi，欢迎来到我的博客👋</div>
-    <img src="https://api.szfx.top/info-card/" fancybox="true">
+    <img src="https://api.zxki.cn/api/ipqm">
 
 info-card:
   layout: markdown
@@ -49,7 +49,7 @@ info-card:
 
 memos:
   layout: timeline
-  title: 近期说说
+  title: 💬近期说说💬
   api: https://memos.baymaxam.top/api/v1/memos?limit=10&visibility=public
   type: memos
   hide: user
