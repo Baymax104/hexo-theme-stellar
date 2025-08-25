@@ -7,7 +7,7 @@ welcome:
   title: 🎉欢迎🎉
   content: |
     <div style="margin-bottom: 5px;">Hi，欢迎来到我的博客👋</div>
-    <img src="https://api.zxki.cn/api/ipqm">
+    <img src="https://api.szfx.top/info-card/">
 
 info-card:
   layout: markdown
