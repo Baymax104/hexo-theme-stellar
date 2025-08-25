@@ -8,10 +8,24 @@
 
 'use strict';
 
+class RelatedPage {
+  constructor(page) {
+    this.id = page._id
+    this.wiki = page.wiki
+    this.topic = page.topic
+    this.title = page.title
+    this.path = page.path
+    this.path_key = page.path.replace('.html', '')
+    this.layout = page.layout
+    this.date = page.date
+    this.updated = page.updated
+  }
+}
+
 function getTopicTree(ctx) {
-  var tree = {}
+  const tree = {};
   const data = ctx.locals.get('data')
-  var list = []
+  const list = [];
   for (let key of Object.keys(data)) {
     if (key.endsWith('.DS_Store')) {
       continue
@@ -37,12 +51,36 @@ function getTopicTree(ctx) {
 }
 
 module.exports = ctx => {
-  var topic = ctx.locals.get('data').topic || {}
+  const topic = ctx.locals.get('data').topic || {};
   // 专栏结构树
   topic.tree = getTopicTree(ctx)
   // 索引页显示的专栏列表
   if (topic.publish_list == null) {
     topic.publish_list = Object.keys(topic.tree)
   }
+
+  // 配置 topic 页面
+  const pages = ctx.locals.get('pages')
+  pages.sort('date').each(function (page) {
+    let obj = new RelatedPage(page)
+    // 将 page 添加到 topic.tree
+    if (page.topic?.length > 0) {
+      const topicObject = topic.tree[page.topic];
+      if (topicObject) {
+        obj.page_number = topicObject.pages.length + 1
+        topicObject.pages.push(obj)
+      }
+    }
+  })
+
+  // topic homepage
+  for (let tid of Object.keys(topic.tree)) {
+    let topicObject = topic.tree[tid]
+    if (topicObject.order_by === '-date') {
+      topicObject.pages = topicObject.pages.reverse()
+    }
+    topicObject.homepage = topicObject.pages[0]
+  }
+
   ctx.theme.config.topic = topic
 }

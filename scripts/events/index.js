@@ -7,15 +7,13 @@ hexo.on('generateBefore', () => {
   require('./lib/config')(hexo);
   require('./lib/links')(hexo);
   require('./lib/authors')(hexo);
-  require('./lib/doc_tree')(hexo);
+  require('./lib/wiki_tree')(hexo);
   require('./lib/topic_tree')(hexo);
   require('./lib/utils')(hexo);
   require('./lib/notebooks')(hexo);
 });
 
-hexo.on('generateAfter', () => {
-  require('./lib/merge_posts')(hexo);
-});
+// hexo.on('generateAfter', () => {});
 
 hexo.on('ready', () => {
   if (process.env.HEXO_READY === '1') return;

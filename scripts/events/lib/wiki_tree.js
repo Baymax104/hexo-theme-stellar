@@ -1,5 +1,5 @@
 /**
- * doc_tree.js v2 | https://github.com/xaoxuu/hexo-theme-stellar/
+ * wiki_tree.js v2 | https://github.com/xaoxuu/hexo-theme-stellar/
  */
 
 'use strict';
@@ -17,9 +17,9 @@ class WikiPage {
 }
 
 function getWikiObject(ctx) {
-  var wiki = { tree:{} }
+  const wiki = {tree: {}};
   const data = ctx.locals.get('data')
-  var list = []
+  let list = [];
   for (let key of Object.keys(data)) {
     if (key.endsWith('.DS_Store')) {
       continue
@@ -27,10 +27,10 @@ function getWikiObject(ctx) {
     if (key.includes('wiki/') && key.length > 5) {
       let newKey = key.replace('wiki/', '')
       let obj = data[key]
-      if ((typeof obj.tags == 'string') && obj.tags.constructor == String) {
+      if ((typeof obj.tags == 'string') && obj.tags.constructor === String) {
         obj.tags = [obj.tags]
       }
-      if ((typeof obj.tree == 'object') && obj.tree.constructor == Array) {
+      if ((typeof obj.tree == 'object') && obj.tree.constructor === Array) {
         obj.tree = { '': obj.tree }
       }
       obj.id = newKey
@@ -41,7 +41,7 @@ function getWikiObject(ctx) {
         if (obj.base_dir.startsWith('/')) {
           obj.base_dir = obj.base_dir.substring(1)
         }
-        if (obj.base_dir.length > 1 && obj.base_dir.endsWith('/') == false) {
+        if (obj.base_dir.length > 1 && obj.base_dir.endsWith('/') === false) {
           obj.base_dir = obj.base_dir + '/'
         }
       } else {
@@ -59,7 +59,7 @@ function getWikiObject(ctx) {
 
 module.exports = ctx => {
   // wiki 配置
-  var wiki = getWikiObject(ctx)
+  const wiki = getWikiObject(ctx);
   const pages = ctx.locals.get('pages')
   // wiki 所有页面
   const wiki_pages = pages.filter(p => (p.wiki != null)).map(p => new WikiPage(p))
@@ -68,7 +68,7 @@ module.exports = ctx => {
   wiki.shelf = ctx.locals.get('data').wiki || []
   
   // 数据整合：项目标签
-  var all_tag_name = []
+  const all_tag_name = [];
   for (let id of wiki_list) {
     let item = wiki.tree[id]
     let tags = item.tags
@@ -86,10 +86,10 @@ module.exports = ctx => {
   for (let id of wiki_list) {
     let item = wiki.tree[id]
     item.id = id
-    if (item.title == undefined || item.title.length === 0) {
+    if (item.title === undefined || item.title.length === 0) {
       item.title = id
     }
-    if (item.name == undefined || item.name.length == 0) {
+    if (item.name === undefined || item.name.length === 0) {
       item.name = id
     }
   }
@@ -102,12 +102,12 @@ module.exports = ctx => {
 
     // 首页
     // 未特别指定首页时，获取TOC第一页作为首页
-    var homepage = item.homepage
+    let homepage = item.homepage;
     if (homepage == null && item.tree != null) {
       for (let id of Object.keys(item.tree)) {
         const sec = item.tree[id]
         for (let key of sec) {
-          let hs = sub_pages.filter(p => p.path_key == item.base_dir + key)
+          let hs = sub_pages.filter(p => p.path_key === item.base_dir + key)
           if (hs.length > 0) {
             homepage = hs[0]
             break
@@ -127,15 +127,15 @@ module.exports = ctx => {
     homepage.is_homepage = true
     item.homepage = homepage
     // 内页分组
-    var sections = []
-    var others = sub_pages
+    const sections = [];
+    let others = sub_pages;
     if (item.tree) {
       // 根据配置设置顺序
       for (let title of Object.keys(item.tree)) {
-        var sec = { title: title, pages: []}
+        const sec = {title: title, pages: []};
         for (let key of item.tree[title]) {
-          sec.pages = sec.pages.concat(sub_pages.filter(p => p.path_key == item.base_dir + key))
-          others = others.filter(p => p.path_key != item.base_dir + key)
+          sec.pages = sec.pages.concat(sub_pages.filter(p => p.path_key === item.base_dir + key))
+          others = others.filter(p => p.path_key !== item.base_dir + key)
         }
         sections.push(sec)
       }
@@ -153,7 +153,7 @@ module.exports = ctx => {
     }
     
     // page number
-    var page_number = 0
+    let page_number = 0;
     for (let sec of sections) {
       for (let page of sec.pages) {
         page.page_number = page_number++
@@ -164,9 +164,9 @@ module.exports = ctx => {
   }
   
   // 全站所有的项目标签
-  var all_tags = {}
+  const all_tags = {};
   all_tag_name.forEach((tag_name, i) => {
-    var items = []
+    const items = [];
     for (let id of wiki_list) {
       let item = wiki.tree[id]
       // 过滤掉找不到页面的项目
@@ -192,9 +192,9 @@ module.exports = ctx => {
   for (let id of wiki_list) {
     let item = wiki.tree[id]
     if (item.tags) {
-      var relatedItems = []
+      const relatedItems = [];
       item.tags.forEach((tag_name, i) => {
-        let relatedOtherItems = all_tags[tag_name].items.filter(name => name != item.id)
+        let relatedOtherItems = all_tags[tag_name].items.filter(name => name !== item.id)
         if (relatedOtherItems.length > 0) {
           relatedItems.push({
             name: tag_name,
@@ -209,5 +209,4 @@ module.exports = ctx => {
   wiki.all_tags = all_tags
   wiki.all_pages = wiki_pages
   ctx.theme.config.wiki = wiki
-
 }
