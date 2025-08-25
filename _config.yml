@@ -353,8 +353,8 @@ footer:
   sitemap:
      - title: 博客
        items:
-         - '[近期发布](/)'
          - '[分类](/categories/)'
+         - '[专栏](/topic/)'
          - '[标签](/tags/)'
          - '[归档](/archives/)'
      - title: 知识库
