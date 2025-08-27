@@ -191,10 +191,9 @@ article:
   auto_excerpt: 100
   # 分类或标签颜色
   category_color:
-    "学习笔记": "#009ee1"
     "开源项目": "#28c63b"
     "编程语言": "#d6601a"
-    "框架学习": "#845ef7"
+    "技术体系": "#009ee1"
   # 文章许可协议
   license: '本文采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
@@ -353,16 +352,14 @@ footer:
   sitemap:
      - title: 博客
        items:
-         - '[分类](/categories/)'
          - '[专栏](/topic/)'
+         - '[分类](/categories/)'
          - '[标签](/tags/)'
-         - '[归档](/archives/)'
      - title: 知识库
        items:
-         - '[学习笔记](/wiki/tags/学习笔记/)'
-         - '[开源项目](/wiki/tags/开源项目/)'
          - '[编程语言](/wiki/tags/编程语言/)'
-         - '[框架学习](/wiki/tags/框架学习/)'
+         - '[技术体系](/wiki/tags/技术体系/)'
+         - '[开源项目](/wiki/tags/开源项目/)'
      - title: 社交
        items:
          - '[关于我](/about/)'
