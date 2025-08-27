@@ -56,7 +56,7 @@ module.exports = ctx => {
   topic.tree = getTopicTree(ctx)
   // 索引页显示的专栏列表
   if (topic.publish_list == null) {
-    topic.publish_list = Object.keys(topic.tree)
+    topic.publish_list = ctx.locals.get('data').publish.topic || []
   }
 
   // 配置 topic 页面
