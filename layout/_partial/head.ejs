@@ -51,7 +51,7 @@ function generate_robots() {
   if (IS_BACKUP) {
     return '<meta name="robots" content="noindex, nofollow">';
   }
-  if (is_home() == true) {
+  if (is_home()) {
     return '';
   }
   if (page.robots) {
@@ -63,7 +63,7 @@ function og_args() {
   if (theme.open_graph.twitter_id) {
     args.twitter_id = theme.open_graph.twitter_id;
   }
-  if (page.layout == 'post' && page.cover) {
+  if (page.layout === 'post' && page.cover) {
     args.twitter_card = 'summary_large_image';
   }
   args.image = config.avatar || (config.email ? gravatar(config.email) : null);
@@ -146,7 +146,7 @@ function generate_canonical() {
     <%- favicon_tag(config.favicon) %>
   <% } %>
 
-  <% if (config.highlight && config.highlight.enable == true && config.highlight.hljs == true) { %>
+  <% if (config.highlight && config.highlight.enable === true && config.highlight.hljs === true) { %>
     <%- css(theme.style.codeblock.highlightjs_theme) %>
   <% } %>
 
