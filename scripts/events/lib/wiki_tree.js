@@ -65,7 +65,7 @@ module.exports = ctx => {
   const wiki_pages = pages.filter(p => (p.wiki != null)).map(p => new WikiPage(p))
   const wiki_list = Object.keys(wiki.tree).filter(id => wiki_pages.some(p => p.wiki === id))
   // 上架的项目列表
-  wiki.shelf = ctx.locals.get('data').publish.wiki || []
+  wiki.shelf = ctx.locals.get('data').wikis || []
   
   // 数据整合：项目标签
   const all_tag_name = [];
