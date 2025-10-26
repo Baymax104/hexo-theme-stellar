@@ -30,6 +30,9 @@ function getWikiObject(ctx) {
       if ((typeof obj.tags == 'string') && obj.tags.constructor === String) {
         obj.tags = [obj.tags]
       }
+      if (obj.tree === null) {
+        obj.tree = {}
+      }
       if ((typeof obj.tree == 'object') && obj.tree.constructor === Array) {
         obj.tree = { '': obj.tree }
       }

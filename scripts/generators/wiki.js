@@ -5,10 +5,10 @@
 hexo.extend.generator.register('wiki', function (locals) {
   const { site_tree, wiki } = hexo.theme.config
   const wikiIdList = Object.keys(wiki.tree)
-  if (wikiIdList.length == 0) {
+  if (wikiIdList.length === 0) {
     return {}
   }
-  var ret = []
+  const ret = [];
   ret.push({
     path: site_tree.index_wiki.base_dir + '/index.html',
     layout: ['index_wiki'],
