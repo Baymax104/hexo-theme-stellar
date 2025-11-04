@@ -34,11 +34,14 @@ function getTopicTree(ctx) {
       let newKey = key.replace('topic/', '')
       let obj = data[key]
       obj.id = newKey
-      if (obj.order_by == null) {
+      if (!obj.order_by) {
         obj.order_by = '-date'
       }
-      if (obj.path == null) {
+      if (!obj.path) {
         obj.path = `/topic/${newKey}/`
+      }
+      if (!obj.tree) {
+        obj.tree = []
       }
       obj.pages = []
       list.push(obj)
@@ -61,20 +64,22 @@ module.exports = ctx => {
 
   // 配置 topic 页面
   const pages = ctx.locals.get('pages')
-  pages.sort('date').each(function (page) {
-    let obj = new RelatedPage(page)
-    // 将 page 添加到 topic.tree
-    if (page.topic?.length > 0) {
-      const topicObject = topic.tree[page.topic];
-      if (topicObject) {
-        obj.page_number = topicObject.pages.length + 1
-        topicObject.pages.push(obj)
-      }
+  const topicPages = pages.filter(p => p.topic).map(p => new RelatedPage(p))
+  const topicList = Object.keys(topic.tree).filter(id => topicPages.some(p => p.topic === id))
+
+  // 将 page 添加到 topic.tree
+  for (const topicName of topicList) {
+    const pages = topicPages.filter(p => p.topic === topicName)
+    const topicObject = topic.tree[topicName]
+    if (topicObject) {
+      const includedPages = pages.filter(page => topicObject.tree.some(id => "/" + page.path_key === topicObject.path + id))
+      includedPages.forEach((page, index) => page.page_number = index + 1)
+      topicObject.pages = includedPages
     }
-  })
+  }
 
   // topic homepage
-  for (let tid of Object.keys(topic.tree)) {
+  for (let tid of topicList) {
     let topicObject = topic.tree[tid]
     if (topicObject.order_by === '-date') {
       topicObject.pages = topicObject.pages.reverse()
