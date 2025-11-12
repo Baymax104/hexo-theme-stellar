@@ -63,18 +63,16 @@ module.exports = ctx => {
   }
 
   // 配置 topic 页面
-  const pages = ctx.locals.get('pages')
-  const topicPages = pages.filter(p => p.topic).map(p => new RelatedPage(p))
-  const topicList = Object.keys(topic.tree).filter(id => topicPages.some(p => p.topic === id))
+  const pages = ctx.locals.get('pages').filter(p => p.topic).map(p => new RelatedPage(p))
+  const topicList = Object.keys(topic.tree).filter(id => pages.some(p => p.topic === id))
 
   // 将 page 添加到 topic.tree
   for (const topicName of topicList) {
-    const pages = topicPages.filter(p => p.topic === topicName)
     const topicObject = topic.tree[topicName]
     if (topicObject) {
-      const includedPages = pages.filter(page => topicObject.tree.some(id => "/" + page.path_key === topicObject.path + id))
-      includedPages.forEach((page, index) => page.page_number = index + 1)
-      topicObject.pages = includedPages
+      const topicPages = pages.filter(p => p.topic === topicName && topicObject.tree.some(id => "/" + p.path_key === topicObject.path + id))
+      topicPages.forEach((page, index) => page.page_number = index + 1)
+      topicObject.pages = topicPages
     }
   }
 
